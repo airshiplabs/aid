@@ -1,13 +1,13 @@
 ---
 name: team-ship
-description: Spawn a shipping-focused agent team with test engineer and release engineer for release preparation and deployment.
+description: Assemble the ship squad — test engineer and release engineer for release preparation and deployment.
 disable-model-invocation: true
 argument-hint: "[version or release description]"
 ---
 
-# War Room: Ship Team
+# Ship Squad
 
-Create an agent team called "war-room-ship" with the
+Create an agent team called "ship-squad" with the
 following teammates to ship: $ARGUMENTS
 
 ## Team structure

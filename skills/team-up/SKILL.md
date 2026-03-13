@@ -1,13 +1,13 @@
 ---
 name: team-up
-description: Spawn the full War Room agent team for end-to-end feature work. Includes researcher, architect, builders, reviewers, and release engineer.
+description: Assemble the full tribe — all squads working together for end-to-end feature work. Includes researcher, architect, builders, reviewers, and release engineer.
 disable-model-invocation: true
 argument-hint: "[task description]"
 ---
 
-# War Room: Full Team
+# Tribe: Full Squad Assembly
 
-Create an agent team called "war-room" with the following
+Create an agent team called "tribe" with the following
 teammates and assign them tasks for: $ARGUMENTS
 
 ## Team structure

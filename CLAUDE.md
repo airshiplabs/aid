@@ -34,9 +34,9 @@ settings.json                Plugin settings
 | Security Reviewer  | Vulnerabilities and threats| Read-only |
 | Release Engineer   | Shipping and deployment    | Edit      |
 
-## Principle Reviewers
+## Principles Guild
 
-| Reviewer         | Lens                       |
+| Guild Member     | Lens                       |
 | ---------------- | -------------------------- |
 | Rich Hickey      | Simplicity & data          |
 | John Carmack     | Directness & performance   |
@@ -53,11 +53,11 @@ Agent definitions live in `agents/`.
 
 | Skill          | Purpose                           |
 | -------------- | --------------------------------- |
-| `/team-up`     | Spawn full War Room (8 teammates) |
-| `/team-review` | Spawn review team (3 teammates)   |
-| `/team-build`  | Spawn build team (4 teammates)    |
-| `/team-ship`   | Spawn ship team (2 teammates)     |
-| `/consult`     | Consult 8 principle reviewers     |
+| `/team-up`     | Assemble full tribe (8 teammates) |
+| `/team-review` | Assemble review squad (3)         |
+| `/team-build`  | Assemble build squad (4)          |
+| `/team-ship`   | Assemble ship squad (2)           |
+| `/consult`     | Convene principles guild (8)      |
 
 Skill definitions live in `skills/`.
 
@@ -80,7 +80,7 @@ The standard workflow for feature work:
 /team-up "implement feature X"
 ```
 
-This spawns the full team with phased work:
+This assembles the full tribe with phased work:
 
 1. **Discovery** — Researcher + Architect (parallel)
 2. **Build** — Backend + Frontend + Test (parallel)

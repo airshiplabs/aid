@@ -5,10 +5,10 @@ disable-model-invocation: true
 argument-hint: "[files, PR, or description to review]"
 ---
 
-# Consult the Masters
+# Principles Guild
 
 Review code through 8 legendary programmer lenses.
-Each reviewer scores independently from their expertise.
+Each guild member scores independently from their expertise.
 
 ## Phase 1: Gather Context
 
@@ -23,7 +23,7 @@ needs the full picture to give meaningful scores.
 
 ## Phase 2: Launch Reviewers in Parallel
 
-Create an agent team called "consult-the-masters" with
+Create an agent team called "principles-guild" with
 8 teammates, one per legendary programmer.
 
 Spawn all 8 in parallel. Each reviewer reads the code

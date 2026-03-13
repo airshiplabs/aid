@@ -1,27 +1,27 @@
-# Design: War Room Agent Team (2026-03-13)
+# Design: Tribe Agent Team (2026-03-13)
 
 ## Problem statement
 
 Building software with a single Claude Code session limits
 parallelism, creates blind spots in review, and serializes
-work that could happen concurrently. A coordinated team of
-specialized agents can design, build, review, and ship software
+work that could happen concurrently. A coordinated tribe of
+specialized squads can design, build, review, and ship software
 faster and with higher quality than a single session.
 
 ## Chosen approach
 
-**War Room** — 8 specialized teammates with maximum coverage
-across the full SDLC. Each agent has a distinct role, focused
-tools, and appropriate permissions. The team operates with high
-autonomy under a lead that coordinates work phases.
+**Tribe** — 8 specialized teammates organized into squads,
+following the Spotify model. Each agent has a distinct role,
+focused tools, and appropriate permissions. Squads operate
+with high autonomy, coordinated across phases by a lead.
 
-### Why War Room over alternatives
+### Why Tribe over alternatives
 
 - **Pipeline** (7 agents, phased): too sequential, agents idle
   between phases
 - **Studio** (6 agents, flat): good but lacks dedicated security
   and release roles
-- **War Room** (8 agents, specialized): maximum coverage, every
+- **Tribe** (8 agents, 4 squads): maximum coverage, every
   SDLC concern has a dedicated expert, built-in adversarial
   review
 
@@ -69,10 +69,10 @@ Phase 4 — Ship
 
 ### Skills for team operations
 
-- `/team-up` — full team (8 teammates)
-- `/team-review` — reviewers only (3 teammates)
-- `/team-build` — builders only (4 teammates)
-- `/team-ship` — release only (2 teammates)
+- `/team-up` — full tribe (8 teammates, all squads)
+- `/team-review` — review squad (3 teammates)
+- `/team-build` — build squad (4 teammates)
+- `/team-ship` — ship squad (2 teammates)
 
 ## Trade-offs accepted
 

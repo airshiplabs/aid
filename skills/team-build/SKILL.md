@@ -1,13 +1,13 @@
 ---
 name: team-build
-description: Spawn a build-focused agent team with backend engineer, frontend engineer, and test engineer for parallel implementation work.
+description: Assemble the build squad — backend engineer, frontend engineer, and test engineer for parallel implementation work.
 disable-model-invocation: true
 argument-hint: "[task description]"
 ---
 
-# War Room: Build Team
+# Build Squad
 
-Create an agent team called "war-room-build" with the
+Create an agent team called "build-squad" with the
 following teammates to implement: $ARGUMENTS
 
 ## Team structure

@@ -1,13 +1,13 @@
 ---
 name: team-review
-description: Spawn a review-focused agent team with code reviewer and security reviewer for thorough PR or code review.
+description: Assemble the review squad — code reviewer and security reviewer for thorough PR or code review.
 disable-model-invocation: true
 argument-hint: "[PR number or description]"
 ---
 
-# War Room: Review Team
+# Review Squad
 
-Create an agent team called "war-room-review" with the
+Create an agent team called "review-squad" with the
 following teammates to review: $ARGUMENTS
 
 ## Team structure
