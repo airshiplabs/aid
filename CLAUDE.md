@@ -3,7 +3,7 @@
 ## Team overview
 
 This project uses a **War Room** agent team architecture with
-8 SDLC agents and 7 principle reviewer agents that cover
+8 SDLC agents and 8 principle reviewer agents that cover
 research, design, build, review, and ship.
 
 ## SDLC Agents
@@ -29,6 +29,7 @@ research, design, build, review, and ship.
 | Alan Kay         | Message passing            |
 | Donald Knuth     | Readability                |
 | Barbara Liskov   | Contracts & substitution   |
+| Eric Evans       | Domain modeling            |
 | John Ousterhout  | Deep modules & complexity  |
 
 Agent definitions live in `.claude/agents/`.
@@ -41,7 +42,7 @@ Agent definitions live in `.claude/agents/`.
 | `/team-review` | Spawn review team (3 teammates)   |
 | `/team-build`  | Spawn build team (4 teammates)    |
 | `/team-ship`   | Spawn ship team (2 teammates)     |
-| `/consult`     | Consult 7 principle reviewers     |
+| `/consult`     | Consult 8 principle reviewers     |
 
 Skill definitions live in `.claude/skills/`.
 

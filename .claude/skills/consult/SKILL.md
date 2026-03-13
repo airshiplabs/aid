@@ -1,13 +1,13 @@
 ---
 name: consult
-description: Consult the masters — review code through the lenses of 7 legendary programmers, each scoring independently.
+description: Consult the masters — review code through the lenses of 8 legendary programmers, each scoring independently.
 disable-model-invocation: true
 argument-hint: "[files, PR, or description to review]"
 ---
 
 # Consult the Masters
 
-Review code through 7 legendary programmer lenses.
+Review code through 8 legendary programmer lenses.
 Each reviewer scores independently from their expertise.
 
 ## Phase 1: Gather Context
@@ -24,9 +24,9 @@ needs the full picture to give meaningful scores.
 ## Phase 2: Launch Reviewers in Parallel
 
 Create an agent team called "consult-the-masters" with
-7 teammates, one per legendary programmer.
+8 teammates, one per legendary programmer.
 
-Spawn all 7 in parallel. Each reviewer reads the code
+Spawn all 8 in parallel. Each reviewer reads the code
 directly and produces a score with ranked findings.
 
 **Shared context for every reviewer prompt:**
@@ -68,13 +68,17 @@ directly and produces a score with ranked findings.
    Are interfaces well-defined? Can implementations be
    swapped? Are abstraction boundaries clean?
 
-7. **reviewer-ousterhout** — Deep modules & complexity.
+7. **reviewer-evans** — Domain modeling & ubiquitous
+   language. Does the code tell the story of the domain?
+   Are bounded contexts clear? Are invariants explicit?
+
+8. **reviewer-ousterhout** — Deep modules & complexity.
    Are modules deep with simple interfaces? Is
    complexity pulled downward? Strategic or tactical?
 
 ## Phase 3: Synthesize Scorecard
 
-Wait for all 7 reviewers to complete. Then produce:
+Wait for all 8 reviewers to complete. Then produce:
 
 ### Scorecard
 
@@ -86,12 +90,13 @@ Wait for all 7 reviewers to complete. Then produce:
 | Alan Kay | Message Passing | X/10 |
 | Donald Knuth | Readability | X/10 |
 | Barbara Liskov | Contracts | X/10 |
+| Eric Evans | Domain Modeling | X/10 |
 | John Ousterhout | Deep Modules | X/10 |
 | **Average** | | **X/10** |
 
 ### Consensus Findings
 
-Cross-reference all 7 reviews. Surface findings that
+Cross-reference all 8 reviews. Surface findings that
 multiple reviewers flagged — these are the highest
 priority items.
 
