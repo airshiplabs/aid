@@ -15,7 +15,7 @@ high-quality software, faster.
 ```text
 .claude-plugin/plugin.json   Plugin manifest
 agents/                      16 agent definitions
-skills/                      5 team skills
+skills/                      6 skills
 hooks/hooks.json             Quality gate hooks
 scripts/                     Hook validation scripts
 settings.json                Plugin settings
@@ -26,7 +26,7 @@ settings.json                Plugin settings
 | Agent              | Role                       | Mode      |
 | ------------------ | -------------------------- | --------- |
 | Researcher         | Codebase exploration       | Read-only |
-| Architect          | System design              | Read-only |
+| Architect          | System design              | Plan      |
 | Backend Engineer   | Server-side implementation | Edit      |
 | Frontend Engineer  | Client-side implementation | Edit      |
 | Test Engineer      | Test writing and coverage  | Edit      |
@@ -58,6 +58,7 @@ Agent definitions live in `agents/`.
 | `/team-build`  | Assemble build squad (4)          |
 | `/team-ship`   | Assemble ship squad (2)           |
 | `/consult`     | Convene principles guild (8)      |
+| `/decide`      | Create or manage ADRs (decisions) |
 
 Skill definitions live in `skills/`.
 

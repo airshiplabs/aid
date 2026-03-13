@@ -20,8 +20,9 @@ Spawn these 8 teammates with these roles:
 
 2. **Architect** — design the approach based on research
    findings. Define module boundaries, interface contracts,
-   and the implementation plan. Get plan approved before
-   builders start.
+   and the implementation plan. Also evaluate whether
+   architectural decisions warrant documentation as ADRs.
+   Get plan approved before builders start.
 
 3. **Backend Engineer** — implement server-side changes:
    APIs, data models, business logic, infrastructure.
@@ -52,17 +53,26 @@ Phase the work as follows:
 
 - **Phase 1 — Discovery**: Researcher and Architect work
   in parallel. Researcher gathers context, Architect
-  begins design using early findings.
+  begins design using early findings. After this phase,
+  Architect evaluates design decisions for ADR
+  documentation. If any qualify, write the ADR(s) before
+  Phase 2.
 
 - **Phase 2 — Build**: Backend Engineer, Frontend Engineer,
   and Test Engineer work in parallel. Each owns separate
-  files to avoid conflicts.
+  files to avoid conflicts. After this phase, Architect
+  evaluates implementation decisions for ADR documentation
+  (e.g., significant technical choices made by builders).
 
 - **Phase 3 — Verify**: Code Reviewer and Security Reviewer
-  work in parallel reviewing all changes.
+  work in parallel reviewing all changes. After this
+  phase, Architect evaluates whether reviewer feedback
+  led to decisions worth documenting as ADRs.
 
 - **Phase 4 — Ship**: Release Engineer prepares and
-  executes the release.
+  executes the release. After this phase, Architect
+  evaluates release/deployment decisions for ADR
+  documentation.
 
 ## Coordination rules
 
@@ -72,3 +82,5 @@ Phase the work as follows:
 - Wait for teammates to complete before synthesizing.
 - If a reviewer finds blockers, route fixes back to the
   appropriate builder.
+- Architect owns all files in `docs/decisions/`. No other
+  teammate writes ADRs.
