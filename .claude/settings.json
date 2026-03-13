@@ -1,0 +1,31 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "hooks": {
+    "TeammateIdle": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/scripts/validate-teammate-idle.sh",
+            "timeout": 30,
+            "statusMessage": "Checking teammate completion criteria..."
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/scripts/validate-task-completion.sh",
+            "timeout": 120,
+            "statusMessage": "Validating task completion..."
+          }
+        ]
+      }
+    ]
+  }
+}
