@@ -3,32 +3,45 @@
 ## Team overview
 
 This project uses a **War Room** agent team architecture with
-8 specialized agents that cover the full software development
-lifecycle: research, design, build, review, and ship.
+8 SDLC agents and 7 principle reviewer agents that cover
+research, design, build, review, and ship.
 
-## Agents
+## SDLC Agents
 
-| Agent              | Role                         | Mode        |
-| ------------------ | ---------------------------- | ----------- |
-| Researcher         | Codebase exploration         | Read-only   |
-| Architect          | System design                | Read-only   |
-| Backend Engineer   | Server-side implementation   | Edit        |
-| Frontend Engineer  | Client-side implementation   | Edit        |
-| Test Engineer      | Test writing and coverage    | Edit        |
-| Code Reviewer      | Quality and correctness      | Read-only   |
-| Security Reviewer  | Vulnerabilities and threats  | Read-only   |
-| Release Engineer   | Shipping and deployment      | Edit        |
+| Agent              | Role                       | Mode      |
+| ------------------ | -------------------------- | --------- |
+| Researcher         | Codebase exploration       | Read-only |
+| Architect          | System design              | Read-only |
+| Backend Engineer   | Server-side implementation | Edit      |
+| Frontend Engineer  | Client-side implementation | Edit      |
+| Test Engineer      | Test writing and coverage  | Edit      |
+| Code Reviewer      | Quality and correctness    | Read-only |
+| Security Reviewer  | Vulnerabilities and threats| Read-only |
+| Release Engineer   | Shipping and deployment    | Edit      |
+
+## Principle Reviewers
+
+| Reviewer         | Lens                       |
+| ---------------- | -------------------------- |
+| Rich Hickey      | Simplicity & data          |
+| John Carmack     | Directness & performance   |
+| Joe Armstrong    | Fault isolation            |
+| Alan Kay         | Message passing            |
+| Donald Knuth     | Readability                |
+| Barbara Liskov   | Contracts & substitution   |
+| John Ousterhout  | Deep modules & complexity  |
 
 Agent definitions live in `.claude/agents/`.
 
 ## Skills
 
-| Skill          | Purpose                               |
-| -------------- | ------------------------------------- |
-| `/team-up`     | Spawn full War Room (8 teammates)     |
-| `/team-review` | Spawn review team (3 teammates)       |
-| `/team-build`  | Spawn build team (4 teammates)        |
-| `/team-ship`   | Spawn ship team (2 teammates)         |
+| Skill          | Purpose                           |
+| -------------- | --------------------------------- |
+| `/team-up`     | Spawn full War Room (8 teammates) |
+| `/team-review` | Spawn review team (3 teammates)   |
+| `/team-build`  | Spawn build team (4 teammates)    |
+| `/team-ship`   | Spawn ship team (2 teammates)     |
+| `/consult`     | Consult 7 principle reviewers     |
 
 Skill definitions live in `.claude/skills/`.
 
