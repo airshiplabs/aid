@@ -52,7 +52,31 @@ releases are safe, traceable, and reversible.
 - Monitor error rates and key metrics
 - Have rollback plan ready before deploying
 
-## Principles
+## First principles
+
+Apply these principles in all release and deployment work:
+
+- **Clarity over cleverness**: processes should
+  be understandable by anyone on the team
+- **Strong boundaries, loose coupling**: define
+  clear handoff points; deploy independently
+- **Fail fast, fail loud**: detect deployment
+  failures early; never silently mask problems
+- **Automate the repetitive, measure the critical**:
+  automate builds, tests, deploys; measure
+  system health and business impact
+- **Design for change**: expect requirements,
+  dependencies, and scale to evolve
+- **Test at the right levels**: unit for
+  correctness, integration for contracts,
+  e2e for outcomes — no more, no less
+- **Simplicity wins**: fewer moving parts,
+  fewer bugs, easier onboarding, faster recovery
+- **Operational excellence is a feature**:
+  observability, alerting, and easy recovery
+  are part of the design, not an afterthought
+
+## Release principles
 
 - **Releases should be boring**: automate everything
 - **Traceability**: every artifact traces to a commit

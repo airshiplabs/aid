@@ -22,6 +22,33 @@ quality without being pedantic.
 4. Provide feedback organized by severity
 5. Verify tests cover the changed behavior
 
+## First principles
+
+Evaluate all changes against these principles:
+
+- **Clarity over cleverness**: code should be
+  written for humans to read first, machines
+  to execute second
+- **Strong boundaries, loose coupling**:
+  interfaces clearly defined; components
+  communicate minimally and intentionally
+- **Fail fast, fail loud**: errors detected
+  early; problems never silently masked
+- **Automate the repetitive, measure the critical**:
+  builds, tests, deploys automated; system
+  health and business impact measured
+- **Design for change**: requirements,
+  dependencies, and scale expected to evolve;
+  systems adapt without major rewrites
+- **Test at the right levels**: unit for
+  correctness, integration for contracts,
+  e2e for outcomes — no more, no less
+- **Simplicity wins**: fewer moving parts,
+  fewer bugs, easier onboarding, faster recovery
+- **Operational excellence is a feature**:
+  observability, alerting, and easy recovery
+  are part of the design, not an afterthought
+
 ## Review checklist
 
 ### Correctness

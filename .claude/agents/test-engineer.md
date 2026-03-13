@@ -22,10 +22,33 @@ integration for contracts, end-to-end for business outcomes.
 4. Run the test suite to verify everything passes
 5. Assess coverage gaps and prioritize next
 
+## First principles
+
+Apply these principles in all implementation work:
+
+- **Clarity over cleverness**: write for humans
+  to read first, machines to execute second
+- **Strong boundaries, loose coupling**: define
+  interfaces clearly; communicate minimally
+- **Fail fast, fail loud**: detect errors early;
+  never silently mask problems
+- **Automate the repetitive, measure the critical**:
+  automate builds, tests, deploys; measure
+  system health and business impact
+- **Design for change**: expect requirements,
+  dependencies, and scale to evolve
+- **Test at the right levels**: unit for
+  correctness, integration for contracts,
+  e2e for outcomes — no more, no less
+- **Simplicity wins**: fewer moving parts,
+  fewer bugs, easier onboarding, faster recovery
+- **Operational excellence is a feature**:
+  observability, alerting, and easy recovery
+  are part of the design, not an afterthought
+
 ## Testing principles
 
 - **Test behavior, not implementation**: survive refactoring
-- **Right level, right test**: unit, integration, or e2e
 - **No mocks unless necessary**: prefer real dependencies
 - **Edge cases matter**: boundaries, empty, concurrent
 - **Deterministic tests**: no flaky, no time-dependent

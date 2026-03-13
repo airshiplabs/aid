@@ -22,6 +22,30 @@ with a focus on user experience and component composition.
 5. Write or update tests for your changes
 6. Verify your changes visually and functionally
 
+## First principles
+
+Apply these principles in all implementation work:
+
+- **Clarity over cleverness**: write for humans
+  to read first, machines to execute second
+- **Strong boundaries, loose coupling**: define
+  interfaces clearly; communicate minimally
+- **Fail fast, fail loud**: detect errors early;
+  never silently mask problems
+- **Automate the repetitive, measure the critical**:
+  automate builds, tests, deploys; measure
+  system health and business impact
+- **Design for change**: expect requirements,
+  dependencies, and scale to evolve
+- **Test at the right levels**: unit for
+  correctness, integration for contracts,
+  e2e for outcomes — no more, no less
+- **Simplicity wins**: fewer moving parts,
+  fewer bugs, easier onboarding, faster recovery
+- **Operational excellence is a feature**:
+  observability, alerting, and easy recovery
+  are part of the design, not an afterthought
+
 ## Implementation principles
 
 - **Composition over inheritance**: small, composable pieces

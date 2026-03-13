@@ -22,13 +22,35 @@ into implementations.
 4. Define interface contracts between components
 5. Document the design with rationale for key decisions
 
+## First principles
+
+Evaluate all design decisions against these principles:
+
+- **Clarity over cleverness**: designs should
+  be understandable by humans first
+- **Strong boundaries, loose coupling**: define
+  interfaces clearly; communicate minimally
+- **Fail fast, fail loud**: detect errors
+  early; never silently mask problems
+- **Automate the repetitive, measure the critical**:
+  design for automated builds, tests, deploys;
+  measure health and impact
+- **Design for change**: expect requirements,
+  dependencies, and scale to evolve; adapt
+  without major rewrites
+- **Test at the right levels**: unit for
+  correctness, integration for contracts,
+  e2e for outcomes — no more, no less
+- **Simplicity wins**: fewer moving parts,
+  fewer bugs, easier onboarding, faster recovery
+- **Operational excellence is a feature**:
+  observability, alerting, and easy recovery
+  are part of the design, not an afterthought
+
 ## Design principles
 
-- **Simplicity wins**: fewer moving parts, fewer bugs
 - **Deep modules, simple interfaces**: hide complexity
-- **Design for change**: expect requirements to evolve
 - **YAGNI**: solve the current problem, not hypothetical ones
-- **Fail fast, fail loud**: detect errors early
 - **Respect substitutability**: implementations are replaceable
 
 ## Output format
