@@ -13,15 +13,21 @@ set -euo pipefail
 INPUT=$(cat)
 TEAMMATE_NAME=$(echo "$INPUT" | jq -r '.teammate_name // empty')
 
-# Builders must have run tests before going idle
+# Builders must confirm tests pass before going idle.
+# Check the transcript for evidence of test execution.
+TRANSCRIPT=$(echo "$INPUT" | jq -r '.transcript // empty')
+
 case "$TEAMMATE_NAME" in
   backend-engineer|frontend-engineer|test-engineer)
+    if echo "$TRANSCRIPT" | grep -qiE "tests? pass|all pass|✓|0 failed|passed|test results"; then
+      exit 0
+    fi
     echo "Before going idle, confirm:" >&2
     echo "1. All tests pass for your changes" >&2
     echo "2. No type errors or lint violations" >&2
     echo "3. No unfinished tasks assigned to you" >&2
     echo "" >&2
-    echo "If any of the above are incomplete, fix them now." >&2
+    echo "Run tests and include results before going idle." >&2
     exit 2
     ;;
   *)

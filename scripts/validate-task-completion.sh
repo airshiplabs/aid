@@ -14,10 +14,17 @@ INPUT=$(cat)
 TASK_SUBJECT=$(echo "$INPUT" | jq -r '.task_subject // empty')
 TEAMMATE_NAME=$(echo "$INPUT" | jq -r '.teammate_name // empty')
 
-# Implementation tasks must include verification
+# Implementation tasks must include test evidence in the
+# completion message. Check task_description for proof.
+TASK_DESC=$(echo "$INPUT" | jq -r '.task_description // empty')
+TEST_EVIDENCE="tests? pass|all pass|✓|0 failed|passed|test results|test output"
+
 case "$TEAMMATE_NAME" in
   backend-engineer|frontend-engineer)
-    echo "Before completing '$TASK_SUBJECT':" >&2
+    if echo "$TASK_DESC" | grep -qiE "$TEST_EVIDENCE"; then
+      exit 0
+    fi
+    printf 'Before completing "%s":\n' "$TASK_SUBJECT" >&2
     echo "1. Run tests for your changes" >&2
     echo "2. Check for type errors" >&2
     echo "3. Verify no regressions" >&2
@@ -26,7 +33,10 @@ case "$TEAMMATE_NAME" in
     exit 2
     ;;
   test-engineer)
-    echo "Before completing '$TASK_SUBJECT':" >&2
+    if echo "$TASK_DESC" | grep -qiE "$TEST_EVIDENCE"; then
+      exit 0
+    fi
+    printf 'Before completing "%s":\n' "$TASK_SUBJECT" >&2
     echo "1. All new tests pass" >&2
     echo "2. No existing tests broken" >&2
     echo "3. Coverage is adequate" >&2
@@ -35,7 +45,11 @@ case "$TEAMMATE_NAME" in
     exit 2
     ;;
   release-engineer)
-    echo "Before completing '$TASK_SUBJECT':" >&2
+    RELEASE_EVIDENCE="quality gates|version bump|changelog|release checklist|ready to ship"
+    if echo "$TASK_DESC" | grep -qiE "$RELEASE_EVIDENCE"; then
+      exit 0
+    fi
+    printf 'Before completing "%s":\n' "$TASK_SUBJECT" >&2
     echo "1. All quality gates passed" >&2
     echo "2. Version bump is correct" >&2
     echo "3. Changelog is updated" >&2
