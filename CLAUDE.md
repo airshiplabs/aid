@@ -1,10 +1,25 @@
 # AID — Airship Intelligence Division
 
-## Team overview
+A Claude Code **plugin** with agent teams that ship
+high-quality software, faster.
 
-This project uses a **War Room** agent team architecture with
-8 SDLC agents and 8 principle reviewer agents that cover
-research, design, build, review, and ship.
+## Installation
+
+```text
+/plugin marketplace add airshiplabs/aid
+/plugin install aid
+```
+
+## Plugin Structure
+
+```text
+.claude-plugin/plugin.json   Plugin manifest
+agents/                      16 agent definitions
+skills/                      5 team skills
+hooks/hooks.json             Quality gate hooks
+scripts/                     Hook validation scripts
+settings.json                Plugin settings
+```
 
 ## SDLC Agents
 
@@ -32,7 +47,7 @@ research, design, build, review, and ship.
 | Eric Evans       | Domain modeling            |
 | John Ousterhout  | Deep modules & complexity  |
 
-Agent definitions live in `.claude/agents/`.
+Agent definitions live in `agents/`.
 
 ## Skills
 
@@ -44,11 +59,11 @@ Agent definitions live in `.claude/agents/`.
 | `/team-ship`   | Spawn ship team (2 teammates)     |
 | `/consult`     | Consult 8 principle reviewers     |
 
-Skill definitions live in `.claude/skills/`.
+Skill definitions live in `skills/`.
 
 ## Hooks
 
-Quality gates enforced via hooks in `.claude/settings.json`:
+Quality gates enforced via hooks in `hooks/hooks.json`:
 
 - **TeammateIdle** — builders must verify tests pass before
   going idle

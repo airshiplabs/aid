@@ -1,0 +1,9 @@
+{
+  "name": "aid",
+  "description": "Agent teams that ship high-quality software, faster",
+  "version": "0.1.0",
+  "author": {
+    "name": "Airship Labs"
+  },
+  "keywords": ["agents", "sdlc", "code-review", "war-room", "team"]
+}
