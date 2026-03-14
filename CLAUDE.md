@@ -1,7 +1,6 @@
 # AID — Airship Intelligence Division
 
-A Claude Code **plugin** with agent teams that ship
-high-quality software, faster.
+A Claude Code **plugin** with agent teams that ship high-quality software, faster.
 
 ## Installation
 
@@ -66,10 +65,8 @@ Skill definitions live in `skills/`.
 
 Quality gates enforced via hooks in `hooks/hooks.json`:
 
-- **TeammateIdle** — builders must verify tests pass before
-  going idle
-- **TaskCompleted** — implementation tasks require test
-  results in their completion message
+- **TeammateIdle** — builders must verify tests pass before going idle
+- **TaskCompleted** — implementation tasks require test results in their completion message
 
 Hook scripts live in `scripts/`.
 
