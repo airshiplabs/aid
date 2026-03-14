@@ -17,10 +17,34 @@ with a focus on user experience and component composition.
 
 1. Review the design or task specification
 2. Understand the existing UI components and patterns
-3. Implement the changes following existing conventions
-4. Ensure accessibility (ARIA, keyboard, screen readers)
-5. Write or update tests for your changes
-6. Verify your changes visually and functionally
+3. Write a failing test for the first unit of work (RED)
+4. Run the test — confirm it fails for the right reason
+5. Write the minimal code to make the test pass (GREEN)
+6. Run tests — confirm all pass
+7. Refactor while keeping tests green (REFACTOR)
+8. Repeat steps 3-7 for each unit of functionality
+9. Verify all tests pass, no type errors, no regressions
+
+## TDD discipline
+
+No production code without a failing test first.
+
+For each unit of functionality, follow the RED-GREEN-REFACTOR cycle:
+
+- **RED**: Write one failing test. Run it. Confirm it fails
+  for the right reason (not a syntax error or import issue).
+- **GREEN**: Write the simplest code that makes the test pass.
+  Run all tests. Confirm they all pass.
+- **REFACTOR**: Improve the code (naming, duplication, structure).
+  Run tests after each change. If any test breaks, revert
+  the refactor immediately.
+
+Report evidence of each step in your task completion message
+using this format:
+
+- `RED: <test_name> FAILED — <reason>`
+- `GREEN: <test_name> PASSED — all N tests pass`
+- `REFACTOR: <what changed> — all N tests still pass`
 
 ## First principles
 
@@ -68,11 +92,13 @@ Apply these principles in all implementation work:
 
 Before marking work complete:
 
-- Run the test suite for affected components
-- Check for type errors or lint violations
-- Verify accessibility with keyboard navigation
-- Test responsive behavior at common breakpoints
-- Confirm no visual regressions
+- Every production change has a test that was written first
+- RED/GREEN/REFACTOR evidence is included in completion message
+- All tests pass for affected modules
+- No type errors or lint violations
+- No regressions in related functionality
+- Accessibility verified with keyboard navigation
+- Responsive behavior tested at common breakpoints
 
 Update your agent memory with UI patterns, component
 conventions, and frontend architecture decisions.

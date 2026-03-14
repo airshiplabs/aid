@@ -18,7 +18,21 @@ TEAMMATE_NAME=$(echo "$INPUT" | jq -r '.teammate_name // empty')
 TRANSCRIPT=$(echo "$INPUT" | jq -r '.transcript // empty')
 
 case "$TEAMMATE_NAME" in
-  backend-engineer|frontend-engineer|test-engineer)
+  backend-engineer|frontend-engineer)
+    TDD_EVIDENCE="RED:.*FAILED|GREEN:.*PASSED|REFACTOR:.*pass"
+    TEST_EVIDENCE="tests? pass|all pass|✓|0 failed|passed|test results"
+    if echo "$TRANSCRIPT" | grep -qiE "$TDD_EVIDENCE|$TEST_EVIDENCE"; then
+      exit 0
+    fi
+    echo "Before going idle, confirm:" >&2
+    echo "1. You followed TDD: RED (failing test) → GREEN (pass) → REFACTOR" >&2
+    echo "2. All tests pass for your changes" >&2
+    echo "3. RED/GREEN/REFACTOR evidence is in your output" >&2
+    echo "" >&2
+    echo "Run tests and include TDD evidence before going idle." >&2
+    exit 2
+    ;;
+  test-engineer)
     if echo "$TRANSCRIPT" | grep -qiE "tests? pass|all pass|✓|0 failed|passed|test results"; then
       exit 0
     fi

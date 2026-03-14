@@ -21,15 +21,16 @@ TEST_EVIDENCE="tests? pass|all pass|✓|0 failed|passed|test results|test output
 
 case "$TEAMMATE_NAME" in
   backend-engineer|frontend-engineer)
-    if echo "$TASK_DESC" | grep -qiE "$TEST_EVIDENCE"; then
+    TDD_EVIDENCE="RED:.*FAILED|GREEN:.*PASSED|REFACTOR:.*pass"
+    if echo "$TASK_DESC" | grep -qiE "$TDD_EVIDENCE|$TEST_EVIDENCE"; then
       exit 0
     fi
     printf 'Before completing "%s":\n' "$TASK_SUBJECT" >&2
-    echo "1. Run tests for your changes" >&2
-    echo "2. Check for type errors" >&2
-    echo "3. Verify no regressions" >&2
+    echo "1. Follow TDD: write failing test → minimal code → refactor" >&2
+    echo "2. Include RED/GREEN/REFACTOR evidence in completion message" >&2
+    echo "3. All tests pass, no type errors" >&2
     echo "" >&2
-    echo "Include test results in your completion message." >&2
+    echo "Include TDD evidence (RED/GREEN/REFACTOR) in completion message." >&2
     exit 2
     ;;
   test-engineer)

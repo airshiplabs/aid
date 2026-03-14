@@ -85,11 +85,23 @@ This assembles the full tribe with phased work:
 3. **Verify** — Code Reviewer + Security Reviewer (parallel)
 4. **Ship** — Release Engineer
 
+## TDD Discipline
+
+Builder agents (Backend Engineer, Frontend Engineer, Test Engineer) follow
+**red-green-refactor** discipline:
+
+1. **RED** — Write a failing test first
+2. **GREEN** — Write minimal code to make it pass
+3. **REFACTOR** — Clean up while keeping tests green
+
+Hook scripts enforce this by requiring TDD evidence (test output showing
+RED→GREEN transitions) before builders can go idle or complete tasks.
+
 ## Conventions
 
 - Teammates must NOT edit the same files
 - Create 5-6 tasks per teammate
 - Reviewers use Conventional Comments format
-- Builders run tests before marking tasks complete
+- Builders follow TDD red-green-refactor and provide test evidence
 - File ownership is assigned explicitly in tasks
 - All agents use the Opus model
